@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# ----------to create a folder that is in the PATH -------------
+mkdir -p ~/.local/bin
+
+# add simple symbolic link to superviolin in path like in 
+# https://github.com/aborruso/bashnotebook/blob/0de5d657de745fffe53ed1acc35d01c75d389b6e/binder/postBuild#L48
+# so can use `%run superviolin` in a notebook instead of needing `%run ./srv/conda/envs/notebook/bin/superviolin demo`
+cd ~/.local/bin
+ln -s ./srv/conda/envs/notebook/bin/superviolin superviolin
+cd ~
