@@ -2,7 +2,18 @@
 
 
 
-# ----------move superviolin to root -------------
+# ----------get the data file for the demo data and bake it in-------------
+#git clone https://github.com/kynnemall/superviolin.git
+#mv superviolin/superviolin/superviolin/res .
+# ABOVE TWO LINES COULD WORK TOO BUT MIGHT AS WELL JUST GET CSV ONLY
+curl -OL https://raw.githubusercontent.com/kynnemall/superviolin/master/superviolin/superviolin/res/demo_data.csv
+mkdir example_data
+mv demo_data.csv example_data/.
+
+
+
+
+# ----------move `superviolin` to root -------------
 # so can use `%run superviolin` in a notebook instead of needing `%run ./srv/conda/envs/notebook/bin/superviolin demo`
 cp /srv/conda/envs/notebook/bin/superviolin ~/.
 # NOTE
